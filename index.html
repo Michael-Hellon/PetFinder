@@ -11,7 +11,116 @@
   <title>Pet Finder</title>
   
 </head>
+<body> 
+  <header> 
+      <h1 class="logo"><a href="#">Pet Finder!</a></h1> 
+      
+      <nav> 
+          <ul> 
+              <li class="nav1"><a href="/">Home</a></li> 
+             
+                </li> 
+              <li class="nav1"><a href="#">Contact</a></li> 
+          </ul> 
+        
+      </nav> 
+      <style> 
+        /*add full-width input fields*/ 
+          
+        input[type=text], 
+        input[type=password] { 
+            width: 100%; 
+            padding: 12px 20px; 
+            margin: 8px 0; 
+            display: inline-block; 
+            border: 2px solid #ccc; 
+            box-sizing: border-box; 
+        } 
+        /* set a style for all buttons*/ 
+          
+        button { 
+            background-color: green; 
+            color: white; 
+            padding: 15px 20px; 
+            margin: 8px 0; 
+            cursor: pointer; 
+            width: 100%; 
+        } 
+        /*set styles for the cancel button*/ 
+          
+        .cancelbtn { 
+            padding: 15px 20px; 
+            background-color: #FF2E00; 
+        } 
+        /*float cancel and signup buttons and add an equal width*/ 
+          
+        .cancelbtn, 
+        .signupbtn { 
+            float: left; 
+            width: 50%; 
+        } 
+        /*add padding to container elements*/ 
+          
+        .container { 
+            padding: 16px; 
+        } 
+        /*clear floats*/ 
+          
+        .clearfix::after { 
+            content: ""; 
+            clear: both; 
+            display: table; 
+        } 
+        /*styles for cancel button and signup button  
+          on extra small screens*/ 
+          
+        @media screen and (max-width: 600px) { 
+            .cancelbtn, 
+            .signupbtn { 
+                width: 100%; 
+            } 
+        } 
+    </style> 
+      
+    <body> 
+      
+        <h2>Find Your Pal!</h2> 
+        <!--Step 1:Adding HTML-->
+        <form action="/action_page.php" style="border:1px solid #ccc"> 
+            <div class="container"> 
+                <label><b>Pet</b></label> 
+                <input type="text" 
+                       placeholder="Enter Pet" 
+                       name="Pet" required> 
+      
+                <label><b>Breed</b></label> 
+                <input type="text" 
+                       placeholder="Enter Breed" 
+                       name="psw" 
+                       required> 
+      
+                 
+                  </p> 
+      
+                <div class="clearfix"> 
+                    <button type="button" class="cancelbtn">Cancel</button> 
+                    <button type="submit" class="signupbtn">Enter</button> 
+                </div> 
+            </div> 
+        </form> 
+      
+    </body> 
+     
+      
+  </header> 
 
+
+</div>
+
+
+
+
+</main> 
 <body>
     
     <script src="./assets/js/script.js"></script>
