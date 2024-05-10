@@ -7,73 +7,45 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
   <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Pet Finder</title>
 </head>
 
-<body class=""> 
-    <header> 
-      <h1 class="logo"><a href="#">Pet Finder!</a></h1>     
+<body class="mx-2 my-2"> 
+    <header class="flex flex-row justify-between"> 
+      <h1 class="text-5xl">Pet Finder!</h1>     
       <nav> 
-          <ul> 
-              <li class="nav1"><a href="/">Home</a></li> 
-              <li class="nav1"><a href="#">Contact</a></li> 
+          <ul class="flex flex-row"> 
+              <li class="nav1 mx-5 hover:text-cyan-600"><a href="#">Home</a></li> 
+              <li class="nav1 hover:text-cyan-600"><a href="#">See All Pets</a></li> 
           </ul> 
       </nav> 
     </header> 
-      
 
-<!-- A modal dialog containing a form -->
-    <form id="form">
-      <input type="text" name="species" placeholder="Species"/>
-      <input type="text" name="breed" placeholder="Breed"/>
-      <input type="text" name="location" placeholder="Location"/>
-      <input type="checkbox" name="check" />
-      <button name="intent" value="save">Save</button>
+      <!-- Open the modal using ID.showModal() method -->
+    <div class="flex">
+        <button class="btn btn-accent" onclick="my_modal_1.showModal()">Find Pet</button>
+    </div>
+  <dialog id="my_modal_1" class="modal">
+    <form method="dialog" class="modal-box" id="response-form">
+      <p class="py-4">Find your pet!</p>
+      <select class="select select-bordered" name="species" id="species">
+      <!-- <input type="text" name="species" placeholder="Species"/> -->
+        <option value="" disabled selected>Select a Breed...</option>
+        <option value="species">Dog</option>
+      </select>
+      <!-- <input type="text" name="breed" placeholder="Breed"/> TBD in the future?-->
+      <input class="input input-bordered" type="text" name="location" id="location" placeholder="Location"/>
+
+      <div class="modal-action">
+        <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+      </div>
+      <div class="modal-action">
+        <button class="btn">Close</button>
+      </div>
     </form>
-
-    <output id="output"></output>
-    
-  
-      
-        <!-- Step 1:Adding HTML
-        <div id="static-modal">
-            <form action="/action_page.php" style="border:1px solid #ccc"> 
-                <div class="container"> 
-                    <label><b>Pet</b></label> 
-                    <input type="text" 
-                        placeholder="Enter Pet" 
-                        name="Pet" required> 
-        
-                    <label><b>Breed</b></label> 
-                    <input type="text" 
-                        placeholder="Enter Breed" 
-                        name="psw" 
-                        required> 
-        
-                    
-        
-                    <div class="clearfix"> 
-                        <button type="button" class="cancelbtn">Cancel</button> 
-                        <button type="submit" class="signupbtn">Enter</button> 
-                    </div> 
-                </div> 
-            </form> 
-        </div> -->
-      
-    </body> 
-     
-      
-
-
-
-</div>
-
-
-
-
-</main> 
-<body>
+  </dialog>
     
     <script src="./assets/js/script.js"></script>
 </body>
