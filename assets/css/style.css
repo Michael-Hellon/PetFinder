@@ -99,6 +99,8 @@ footer {
 
 
 
+
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -135,3 +137,57 @@ footer {
     text-decoration: none;
     cursor: pointer;
   }
+
+  input[type=text], 
+        input[type=password] { 
+            width: 100%; 
+            padding: 12px 20px; 
+            margin: 8px 0; 
+            display: inline-block; 
+            border: 2px solid #ccc; 
+            box-sizing: border-box; 
+        } 
+        /* set a style for all buttons*/ 
+          
+        button { 
+            background-color: green; 
+            color: white; 
+            padding: 15px 20px; 
+            margin: 8px 0; 
+            cursor: pointer; 
+            width: 100%; 
+        } 
+        /*set styles for the cancel button*/ 
+          
+        .cancelbtn { 
+            padding: 15px 20px; 
+            background-color: #FF2E00; 
+        } 
+        /*float cancel and signup buttons and add an equal width*/ 
+          
+        .cancelbtn, 
+        .signupbtn { 
+            float: left; 
+            width: 50%; 
+        } 
+        /*add padding to container elements*/ 
+          
+        .container { 
+            padding: 16px; 
+        } 
+        /*clear floats*/ 
+          
+        .clearfix::after { 
+            content: ""; 
+            clear: both; 
+            display: table; 
+        } 
+        /*styles for cancel button and signup button  
+          on extra small screens*/ 
+          
+        @media screen and (max-width: 600px) { 
+            .cancelbtn, 
+            .signupbtn { 
+                width: 100%; 
+            } 
+        } 

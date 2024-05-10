@@ -1,44 +1,28 @@
-modalCreation
-
-    
-
-
 const petApiKey = "hg4nsv85lppeoqqixy3tnlt3k8lj6o0c";
 let species = "dog"; // we'll need to make this dynamic later - eric
 
-window.onload = function () {
-    document.getElementById("modal_id-anchor-toggle").click();
-    };
-// Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+const form = document.getElementById("form");
+const submitter = document.querySelector("button[value=save]");
+const output = document.getElementById("output");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
+form.addEventListener("submit", function (e) {
+e.preventDefault();
+const formData = new FormData(form, submitter);
+for (const [key, value] of formData) {
+    if (key !== "intent") {
+    output.textContent += `${key}: ${value}\n`;
+    }
 }
+});
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+
 
 
 // Calls the adopt a pet API and retrieves data on the selected species
 function getAdoptPetData() {
-    const petUrl = "https://api-staging.adoptapet.com/search/search_form?key="+petApiKey+"&v=3&output=json&species="+species+"";
+    const petUrl = "https://api-staging.adoptapet.com/search/pet_search?key="+petApiKey+"&v=3&output=json&city_or_zip=47374&geo_range=50&species="+species+"&breed_id=real%3D801&sex=m&age=young&start_number=1&end_number=50";
 
     fetch(petUrl)
     .then(function (response) {
@@ -57,4 +41,3 @@ function getAdoptPetData() {
 };
 
 getAdoptPetData(); // have this just to test that the function is providing data.  We can delete this line later - eric
-main
