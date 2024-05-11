@@ -1,24 +1,19 @@
+const responseForm = document.getElementById("response-form");
+const speciesInput = document.getElementById("species");
+const locationInput = document.getElementById("location");
+const modalSubmitBtn = document.getElementById("submit");
+
 const petApiKey = "hg4nsv85lppeoqqixy3tnlt3k8lj6o0c";
 let species = "dog"; // we'll need to make this dynamic later - eric
 
+responseForm.addEventListener('submit', handleFormSubmit);
 
-const form = document.getElementById("form");
-const submitter = document.querySelector("button[value=save]");
-const output = document.getElementById("output");
+function handleFormSubmit() {
+    const speciesAnswer = speciesInput.value;
+    const locationAnswer = locationInput.value.trim();
 
-form.addEventListener("submit", function (e) {
-e.preventDefault();
-const formData = new FormData(form, submitter);
-for (const [key, value] of formData) {
-    if (key !== "intent") {
-    output.textContent += `${key}: ${value}\n`;
-    }
+    location.href = "results.html";
 }
-});
-
-
-
-
 
 // Calls the adopt a pet API and retrieves data on the selected species
 function getAdoptPetData() {
