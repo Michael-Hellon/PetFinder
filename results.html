@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Pets Found</title>
+</head>
+
+<body>
+    <header>
+    
+    <div class="navbar bg-base-300 rounded-box">
+        <div class="flex-1 px-2 lg:flex-none">
+          <a class="text-lg font-bold">One Step Closer to Finding Your Forever Friend</a>
+        </div> 
+
+    <!--<div class="flex justify-end flex-1 px-2">-->
+    <!--<div class="flex justify-start flex-1 px-2">-->
+    
+        <div class="flex justify-center flex-1 px-2">
+          <div class="flex items-stretch">
+            <div class="dropdown dropdown-bottom">
+              <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">Age</div>
+              <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                <li><a>Puppy: under 18 months old</a></li>
+                <li><a>Adulthood: 19 months to 3 years old</a></li>
+                <li><a>Senior: 6 years old and beyond</a></li>
+              </ul>
+            </div>
+          </div>     
+          <div class="flex items-stretch">
+            <div class="dropdown dropdown-bottom">
+              <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">Breed</div>
+              <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                <li><a>Corgi</a></li>
+                <li><a>Golden Retriever</a></li>
+                <li><a>German Shepherd</a></li>
+                <li><a>French Bulldog</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex items-stretch">
+            <div class="dropdown dropdown-bottom">
+              <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">Distance</div>
+              <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                <li><a>10 miles</a></li>
+                <li><a>25 miles</a></li>
+                <li><a>50 miles</a></li>
+                <li><a>75 miles</a></li>
+                <li><a>100 miles</a></li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+ 
+
+
+      </div>
+    </header>
+
+    <section>
+      <div> 
+        <div class="dropdown dropdown-left dropdown-end">
+          <div tabindex="0" role="button" class="btn m-1">Age</div>
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Puppy: under 18 months old</a></li>
+              <li><a>Adulthood: 19 months to 3 years old</a></li>
+              <li><a>Senior: 6 years old and beyond</a></li>
+          </ul>
+        </div>
+        <div class="dropdown dropdown-left dropdown-end">
+          <div tabindex="0" role="button" class="btn m-1">Breed</div>
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Corgi</a></li>
+              <li><a>Golden Retriever</a></li>
+              <li><a>German Shepherd</a></li>
+              <li><a>French Bulldog</a></li>
+          </ul>
+       </div>
+    </section>
+    <section width-25%>
+      <div>Distance - Miles
+        <input type="range" min="0" max="100" value="25" class="range range-xs" step="25"/>
+        <div class="w-full flex justify-between text-xs px-2">
+          <span>10</span>
+          <span>25</span>
+          <span>50</span>
+          <span>75</span>
+          <span>100</span>
+      </div>
+    </section>
+</body>
+</html>
+<!-- 
+<ul class="menu-dropdown-toggle bg-base-200 w-56 rounded-box">
+    <li><a>Corgi</a></li>
+    <li><a>Golden Retriever</a></li>
+    <li><a>German Shepherd</a></li>
+    <li><a>French Bulldog</a></li>
+
+  </ul>
+  <ul class="menu-dropdown-toggle bg-base-200 w-56 rounded-box">
+    <li><a>Puppy: under 18 months old</a></li>
+    <li><a>Adulthood: 19 months to 3 years old</a></li>
+    <li><a>Senior: 6 years old and beyond</a></li>
+  </ul>
+-->
