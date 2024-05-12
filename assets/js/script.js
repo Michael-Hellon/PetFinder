@@ -9,33 +9,40 @@ const modalSubmitBtn = document.getElementById("submit");
 const petApiKey = "hg4nsv85lppeoqqixy3tnlt3k8lj6o0c";
 let species = "dog"; // we'll need to make this dynamic later - eric
 
+// This activates the Submit button on the modal's form
 responseForm.addEventListener('submit', handleFormSubmit);
-
 
 function handleFormSubmit() {
     const speciesAnswer = speciesInput.value;
-    const locationAnswer = locationInput.value.trim();
     const petAgeAnswer = ageInput.value;
     const petGenderAnswer = genderInput.value;
     const petDistanceAnswer = distanceInput.value;
-
+    const locationAnswer = locationInput.value.trim();
+    
+    // This checks if each field is filled out before allowing submission to occur.
+    if (!speciesAnswer) {
+        alert('Enter Pet Species');
+        return;
+    } else if (!petAgeAnswer) {
+        alert('Enter Pet Age');
+        return;
+    } else if (!petGenderAnswer) {
+        alert('Enter Pet Gender');
+        return;
+    } else if (!petDistanceAnswer) {
+        alert('Enter Distance From You');
+        return;
+    } else if (!locationAnswer) {
+        alert('Enter your Location');
+        return;
+    } 
     location.href = "results.html";
-
-    if (locationAnswer === '') {
-        alert('error', 'Must enter a Zip code');
-
-
-
 }
 
 // Calls the adopt a pet API and retrieves data on the selected species
-function getAdoptPetData() {
+function getAdoptPetData(petInfo) {
    
-    const petUrl = "https://api-staging.adoptapet.com/search/pet_search?key="+petApiKey+"&v=3&output=json&city_or_zip="+locationInput+"&geo_range="+distanceInput+"&species="+species+"&breed_id=real%3D801&sex="+petGender+"&age="+petAgeInput+"&start_number=1&end_number=50";
-
-        console.log()
-
-
+    const petUrl = "https://api-staging.adoptapet.com/search/pet_search?key="+petApiKey+"&v=3&output=json&city_or_zip="+locationAnswer+"&geo_range="+petDistanceAnswer+"&species="+speciesAnswer+"&breed_id=real%3D801&sex="+petGenderAnswer+"&age="+petAgeAnswer+"&start_number=1&end_number=50";
 
     fetch(petUrl)
     .then(function (response) {
@@ -45,7 +52,6 @@ function getAdoptPetData() {
         else {
             response.json().then(function (data) {
                 console.log(data);
-
             })
         }
     })
