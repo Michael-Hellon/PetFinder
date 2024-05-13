@@ -7,6 +7,8 @@ const distanceInput = document.getElementById("distance");
 const modalSubmitBtn = document.getElementById("submit");
 
 const petApiKey = "hg4nsv85lppeoqqixy3tnlt3k8lj6o0c";
+const geoCodeApiKey = "664243d6da3b5785032551omxdb1a57";
+
 // let species = "dog"; // we'll need to make this dynamic later - eric
 
 // This activates the Submit button on the modal's form
@@ -41,8 +43,6 @@ function handleFormSubmit() {
     // TODO push petInfo to local storage
     getAdoptPetData(petInfo);
     //location.href = "results.html";  // have this commented out for the moment to more easily see console log of the index page
-        
-
 }
 
 // Calls the adopt a pet API and retrieves data on the selected species
@@ -81,4 +81,24 @@ function getAdoptPetData(petInfo) {
     .catch(function (error) {
         alert('Unable to connect to Adopt a Pet API');
     });
+    geoCodeZip(petInfo);
+ };
+
+ function geoCodeZip(petInfo) {
+    //console.log(petInfo);
+    const geoUrl = "https://geocode.maps.co/search?q="+petInfo.location+"&api_key=664243d6da3b5785032551omxdb1a57&limit=1";
+    
+    fetch(geoUrl)
+    .then(function (response) {
+        if (!response.ok) {
+            alert(`Error: ${response.statusText}`);
+        }
+        else {
+            response.json().then(function (data) {
+                console.log(data);
+                console.log(`Longitude: ${data[0].lon}`);
+                console.log(`Latitude: ${data[0].lat}`);
+            })
+        }
+    })
  };
