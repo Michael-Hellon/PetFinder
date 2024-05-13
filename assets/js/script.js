@@ -7,7 +7,7 @@ const distanceInput = document.getElementById("distance");
 const modalSubmitBtn = document.getElementById("submit");
 
 const petApiKey = "hg4nsv85lppeoqqixy3tnlt3k8lj6o0c";
-let species = "dog"; // we'll need to make this dynamic later - eric
+// let species = "dog"; // we'll need to make this dynamic later - eric
 
 // This activates the Submit button on the modal's form
 responseForm.addEventListener('submit', handleFormSubmit);
@@ -41,7 +41,8 @@ function handleFormSubmit() {
     // TODO push petInfo to local storage
     getAdoptPetData(petInfo);
     //location.href = "results.html";  // have this commented out for the moment to more easily see console log of the index page
-    
+        
+
 }
 
 // Calls the adopt a pet API and retrieves data on the selected species
@@ -49,6 +50,7 @@ function getAdoptPetData(petInfo) {
     console.log(petInfo);
     const petUrl = "https://api-staging.adoptapet.com/search/pet_search?key="+petApiKey+"&v=3&output=json&city_or_zip="+petInfo.location+"&geo_range="+petInfo.distance+"&species="+petInfo.species+"&breed_id=real%3D801&sex="+petInfo.gender+"&age="+petInfo.age+"&start_number=1&end_number=50";
 
+    let petArray = [];
     fetch(petUrl)
     .then(function (response) {
         if (!response.ok) {
@@ -57,10 +59,26 @@ function getAdoptPetData(petInfo) {
         else {
             response.json().then(function (data) {
                 console.log(data);
+                console.log('Pet age',data.pets[0].age);
+                console.log('Pet name',data.pets[0].pet_name);
+                console.log('Pet sex',data.pets[0].sex);
+                console.log('Pet breed',data.pets[0].primary_breed);
+                console.log('Pet pic',data.pets[0].large_results_photo_url);
+
+                let petAge = data.pets[0].age;
+                let petName = data.pets[0].pet_name;
+                let petGender = data.pets[0].sex;
+                let petBreed= data.pets[0].primary_breed;
+                let petPic = data.pets[0].large_results_photo_url;
+
+                petArray.push(petAge, petName, petGender, petBreed, petPic,);
+                
+                localStorage.setItem(petArray, JSON.stringify(petArray));
             })
         }
+       
     })
     .catch(function (error) {
         alert('Unable to connect to Adopt a Pet API');
     });
-};
+ };
