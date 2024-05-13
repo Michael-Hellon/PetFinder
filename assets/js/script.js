@@ -64,16 +64,19 @@ function getAdoptPetData(petInfo) {
                 console.log('Pet sex',data.pets[0].sex);
                 console.log('Pet breed',data.pets[0].primary_breed);
                 console.log('Pet pic',data.pets[0].large_results_photo_url);
+                console.log('pet Details', data.pets[0].details_url) 
+
+                console.log('pets.length', data.pets.length)
 
                 let petAge = data.pets[0].age;
                 let petName = data.pets[0].pet_name;
                 let petGender = data.pets[0].sex;
                 let petBreed= data.pets[0].primary_breed;
                 let petPic = data.pets[0].large_results_photo_url;
+                let petDetails = data.pets[0].details_url;
 
-                petArray.push(petAge, petName, petGender, petBreed, petPic,);
-                
-                localStorage.setItem(petArray, JSON.stringify(petArray));
+                petArray.push(petAge, petName, petGender, petBreed, petPic, petDetails);
+
             })
         }
        
