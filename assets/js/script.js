@@ -77,6 +77,7 @@ function getAdoptPetData(petInfo) {
                 let petDetails = data.pets[0].details_url;
 
                 petArray.push(petAge, petName, petGender, petBreed, petPic, petDetails);
+                    localStorage.setItem('petName', JSON.stringify(petArray));
             })
         }
        
