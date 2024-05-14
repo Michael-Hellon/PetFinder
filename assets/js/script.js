@@ -43,7 +43,7 @@ function handleFormSubmit(event) {
 
     // TODO push petInfo to local storage
     getAdoptPetData(petInfo);
-    location.href = "results.html";  // have this commented out for the moment to more easily see console log of the index page
+   //location.href = "results.html";  // have this commented out for the moment to more easily see console log of the index page
 }
 
 // Calls the adopt a pet API and retrieves data on the selected species
@@ -80,7 +80,7 @@ function getAdoptPetData(petInfo) {
                         details: data.pets[i].details_url,
                     }
                     petArray.push(petData);
-                        localStorage.setItem('petName', JSON.stringify(petArray));
+                    localStorage.setItem(data.pets[i].pet_name, JSON.stringify(petArray));
                 }
 
 
@@ -118,6 +118,17 @@ function getAdoptPetData(petInfo) {
                 console.log(data);
                 console.log(`Longitude: ${data[0].lon}`);
                 console.log(`Latitude: ${data[0].lat}`);
+                const geoLatLon = {
+                    latitude: data[0].lat,
+                    longitude: data[0].lon,
+                };
+                let geoArray = JSON.parse(localStorage.getItem('geoArray'));
+                if (!geoArray) {
+                    geoArray = [];
+                }
+                geoArray.push(geoLatLon);
+                localStorage.setItem('geoArray', JSON.stringify(geoArray));
+                console.log(geoArray);
             })
         }
     })
