@@ -41,9 +41,7 @@ function handleFormSubmit(event) {
         return;
     } 
 
-    // TODO push petInfo to local storage
     getAdoptPetData(petInfo);
-   //location.href = "results.html";  // have this commented out for the moment to more easily see console log of the index page
 }
 
 // Calls the adopt a pet API and retrieves data on the selected species
@@ -60,15 +58,6 @@ function getAdoptPetData(petInfo) {
         }
         else {
             response.json().then(function (data) {
-                // console.log(data);
-                // console.log('Pet age',data.pets[0].age);
-                // console.log('Pet name',data.pets[0].pet_name);
-                // console.log('Pet sex',data.pets[0].sex);
-                // console.log('Pet breed',data.pets[0].primary_breed);
-                // console.log('Pet pic',data.pets[0].large_results_photo_url);
-                // console.log('pet Details', data.pets[0].details_url) 
-
-                // console.log('pets.length', data.pets.length)
 
                 for (let i = 0; i < data.pets.length; i++) {
                     const petData = {
@@ -80,20 +69,9 @@ function getAdoptPetData(petInfo) {
                         details: data.pets[i].details_url,
                     }
                     petArray.push(petData);
-                    localStorage.setItem(data.pets[i].pet_name, JSON.stringify(petArray));
+                    localStorage.setItem('petArray', JSON.stringify(petArray));
                 }
-
-
-            //     let petAge = data.pets[0].age;
-            //     let petName = data.pets[0].pet_name;
-            //     let petGender = data.pets[0].sex;
-            //     let petBreed= data.pets[0].primary_breed;
-            //     let petPic = data.pets[0].large_results_photo_url;
-            //     let petDetails = data.pets[0].details_url;
-
-            //     petArray.push(petData);
-            //     petArray.push(petAge, petName, petGender, petBreed, petPic, petDetails);
-            //         localStorage.setItem('petName', JSON.stringify(petArray));
+                geoCodeZip(petInfo);
             })
         }
        
@@ -101,7 +79,7 @@ function getAdoptPetData(petInfo) {
     .catch(function (error) {
         alert('Unable to connect to Adopt a Pet API');
     });
-    geoCodeZip(petInfo);
+    
  };
 
  function geoCodeZip(petInfo) {
@@ -131,5 +109,6 @@ function getAdoptPetData(petInfo) {
                 console.log(geoArray);
             })
         }
+        location.href = "results.html";  // have this commented out for the moment to more easily see console log of the index page
     })
  };
