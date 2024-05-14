@@ -14,7 +14,8 @@ const geoCodeApiKey = "664243d6da3b5785032551omxdb1a57";
 // This activates the Submit button on the modal's form
 responseForm.addEventListener('submit', handleFormSubmit);
 
-function handleFormSubmit() {
+function handleFormSubmit(event) {
+    event
     const petInfo = {
         species: speciesInput.value,
         age: ageInput.value,
@@ -76,7 +77,6 @@ function getAdoptPetData(petInfo) {
                 let petDetails = data.pets[0].details_url;
 
                 petArray.push(petAge, petName, petGender, petBreed, petPic, petDetails);
-
             })
         }
        
