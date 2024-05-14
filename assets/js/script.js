@@ -49,7 +49,8 @@ function handleFormSubmit(event) {
 // Calls the adopt a pet API and retrieves data on the selected species
 function getAdoptPetData(petInfo) {
     console.log(petInfo);
-    const petUrl = "https://api-staging.adoptapet.com/search/pet_search?key="+petApiKey+"&v=3&output=json&city_or_zip="+petInfo.location+"&geo_range="+petInfo.distance+"&species="+petInfo.species+"&breed_id=real%3D801&sex="+petInfo.gender+"&age="+petInfo.age+"&start_number=1&end_number=50";
+    const petUrl = "https://api-staging.adoptapet.com/search/pet_search?key="+petApiKey+"&v=3&output=json&city_or_zip="+petInfo.location+"&geo_range="+petInfo.distance+"&species="+petInfo.species+"&sex="+petInfo.gender+"&age="+petInfo.age+"&start_number=1&end_number=50";
+    // removed breed ID param so cats work:  &breed_id=real%3D801
 
     let petArray = [];
     fetch(petUrl)
