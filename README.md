@@ -43,23 +43,19 @@ your project must fulfil the following requirements:
 
 To see the project on the browser visit <https://michael-hellon.github.io/PetFinder/>.
 
-![screenshot](/assets/images/screenshot.png) // added actual front page screenshot file (with Modal)
+![screenshot](/assets/images/Empty-Modal.png) 
 
-![screenshot](/assets/images/screenshot.png) // added actual second page screenshot file (with results)
+![screenshot](/assets/images/Filled-modal.png) 
 
-To 
-
-
-
-
+![screenshot](/assets/images/results-screenshot.png) 
 
 
 ## Authors
 
-Neilson, Gail
-Delatorre, Juan
-Kellog, Eric
-Hellon, Michael
+Neilson, Gail  
+Delatorre, Juan  
+Kellog, Eric  
+Hellon, Michael  
 
 
 
