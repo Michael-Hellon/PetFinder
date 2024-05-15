@@ -8,84 +8,25 @@
     <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
     
     <title>Pets Found</title>
-
 </head>
 
 <body>
-  <h1>API Results</h1>
-    
-  
-    
     <header>
     
     <div class="navbar bg-base-300 rounded-box">
         <div class="flex-1 px-2 lg:flex-none">
           <a class="text-lg font-bold">One Step Closer to Finding Your Forever Friend</a>
-        </div> 
-    
-        <div class="flex justify-center flex-1 px-2">
-          <div class="flex items-stretch">
-            <div class="dropdown dropdown-bottom">
-              <div tabindex="0" role="button" class="btn btn-ghost rounded-btn" onclick="my_modal_1.showModal()">Search Again</div>
-
-              <dialog id="my_modal_1" class="modal">
-                <form method="dialog" class="modal-box" id="response-form">
-                  <p class="py-4">Find your pet!</p>
-                  <select class="select select-bordered w-full max-w-xs" name="species" id="species">
-                  <!-- <input type="text" name="species" placeholder="Species"/> -->
-                    <option value="" disabled selected>Select a Breed...</option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                  </select>
-                  <select class="select select-bordered w-full max-w-xs" name="age" id="age">
-                      <option value="" disabled selected>Select age of Pet...</option>
-                      <option value="kitten">Kitten</option>
-                      <option value="puppy">Puppy</option>
-                      <option value="young">Young</option>
-                      <option value="adult">Adult</option>
-                      <option value="senior">Senior</option>
-                      
-                  </select>
-                  <select class="select select-bordered w-full max-w-xs" name="gender" id="gender">
-                      <option value="" disabled selected>Select Pet Gender</option>
-                      <option value="m">Male</option>
-                      <option value="f">Female</option>
-                      
-                  </select>  
-                  <select class="select select-bordered w-full max-w-xs" name="distance" id="distance">
-                    <option value="" disabled selected>Select Pet Distance</option>
-                    <option value="10">10 miles</option>
-                    <option value="25">25 miles</option>
-                    <option value="50">50 miles</option>
-                    <option value="75">75 miles</option>
-                    <option value="100">100 miles</option>
-                    <option value="500">500 miles</option> <!-- Wild card to test API-->
-                 </select>  
-            
-                  <!-- <input type="text" name="breed" placeholder="Breed"/> TBD in the future?-->
-                  <input class="input input-bordered" type="text" name="location" id="location" placeholder="Zip Code"/>
-                    <div class="modal-action">
-                    <button class="btn btn-primary" type="submit" id="submit">Submit</button>
-                  </div>
-                  <div class="modal-action">
-                    <button class="btn">Close</button>
-                  </div>
-                </form>
-              </dialog>
-              <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4"></ul>
-            </div>
-          </div>     
+   
           <button id="back-button">🔙</button>
         </div>
       </div>
     </header>
 
     <main>
-    <div class="grid grid-cols-6 gap-4" id="results">
-      <div id="mapdiv">
-        <!-- Display your API results here -->
-    </div>
+    <div class="grid grid-cols-6 gap-4" id="results"></div>
+    <div id="mapdiv"></div>
     </main>
+
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/results.js"></script>
     <script src="./assets/js/map.js"></script>
