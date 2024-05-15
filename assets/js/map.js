@@ -2,7 +2,7 @@
 const geoArray = JSON.parse(localStorage.getItem('geoArray'));
 geoArrayLat = geoArray[geoArray.length - 1].latitude;
 geoArrayLon = geoArray[geoArray.length - 1].longitude;
-
+console.log(geoArrayLat, geoArrayLon);
 map = new OpenLayers.Map("mapdiv");
 map.addLayer(new OpenLayers.Layer.OSM());
 
@@ -20,3 +20,7 @@ map.addLayer(markers);
 markers.addMarker(new OpenLayers.Marker(lonLat));
 
 map.setCenter (lonLat, zoom);
+
+// map = new OpenLayers.Map("map");
+// map.addLayer(new OpenLayers.Layer.OSM());
+// map.zoomToMaxExtent();
