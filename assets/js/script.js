@@ -71,6 +71,7 @@ function getAdoptPetData(petInfo) {
                                 breed: data.pets[i].primary_breed,
                                 pic: data.pets[i].large_results_photo_url,
                                 details: data2.pet.description ?? "no description",
+                                email: data2.pet.email,
                             }
                             petArray.push(petData);
                             localStorage.setItem('petArray', JSON.stringify(petArray));  
@@ -113,6 +114,6 @@ function getAdoptPetData(petInfo) {
                 console.log(geoArray);
             })
         }
-        location.href = "results.html";  // have this commented out for the moment to more easily see console log of the index page
+        //location.href = "results.html";  // have this commented out for the moment to more easily see console log of the index page
     })
  };
