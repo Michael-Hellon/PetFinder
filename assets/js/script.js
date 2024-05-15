@@ -114,6 +114,6 @@ function getAdoptPetData(petInfo) {
                 console.log(geoArray);
             })
         }
-        location.href = "results.html";  // have this commented out for the moment to more easily see console log of the index page
+        location.href = "results.html";
     })
  };

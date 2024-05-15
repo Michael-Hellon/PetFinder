@@ -5,8 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-  <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Pet Finder</title>
@@ -44,7 +42,6 @@
     <form method="dialog" class="modal-box" id="response-form">
       <p class="py-4">Find your pet!</p>
       <select class="select select-bordered w-full max-w-xs" name="species" id="species">
-      <!-- <input type="text" name="species" placeholder="Species"/> -->
         <option value="" disabled selected>Select a Breed...</option>
         <option value="dog">Dog</option>
         <option value="cat">Cat</option>
@@ -74,7 +71,6 @@
         <option value="500">500 miles</option> <!-- Wild card to test API-->
      </select>  
 
-      <!-- <input type="text" name="breed" placeholder="Breed"/> TBD in the future?-->
       <input class="input input-bordered" type="text" name="location" id="location" placeholder="Zip Code"/>
         <div class="modal-action">
         <button class="btn btn-primary" type="submit" id="submit">Submit</button>
