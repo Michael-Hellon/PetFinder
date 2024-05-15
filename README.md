@@ -1,9 +1,17 @@
 # PetFinder!
-
 This webapp will allow user to be able to find adoption centers nearby, animals held by centers, and directions to them!
+
 ## Description
 
-The customer will have the option to search around their local area to find adoption center and places alike to be able to find themselves a furry friend. They will be presented with a Modal to find their exact wants in a pet! The customer will then be directed to the directions to place!
+The user will have the option to search around their local area to find adoption center and places alike to be able to find themselves a furry friend. They will be presented with a Modal where there are several drop down buttons to find their perfect pet! Once the user makes their selection and enter their zip code they will be re-directed to a results page that will display all pets matching their selection. Along the bottom of the page The user will find a map of where their future friend is!
+
+- Our main motivation for this project was to help the user find their forever friend. We wanted to tie in at least 2 API's to do this. 
+
+- What was your motivation?
+- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+- What problem does it solve?
+- What did you learn?
+
 
 ## Project Requirements
 
@@ -35,7 +43,12 @@ your project must fulfil the following requirements:
 
 To see the project on the browser visit <https://michael-hellon.github.io/PetFinder/>.
 
-To be added later
+![screenshot](/assets/images/screenshot.png) // added actual front page screenshot file (with Modal)
+
+![screenshot](/assets/images/screenshot.png) // added actual second page screenshot file (with results)
+
+To 
+
 
 
 ## Authors
