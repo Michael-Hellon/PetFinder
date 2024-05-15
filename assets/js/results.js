@@ -1,3 +1,17 @@
+
+
+   
+        // <div>
+        //     <h1>Adoption Centers near you</h1>
+        //     <p>Don't want to travel too far? Try out our maps to see your closest adoption centers.</p>
+        // </div>
+    
+
+
+
+// Select the div element where you want to display the API response
+
+
 const backBtn = document.querySelector('#back-button');
 const resultContainer = document.querySelector('#result-container');
 const petList = document.querySelector("#results");
