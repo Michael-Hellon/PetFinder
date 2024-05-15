@@ -9,8 +9,6 @@ const modalSubmitBtn = document.getElementById("submit");
 const petApiKey = "hg4nsv85lppeoqqixy3tnlt3k8lj6o0c";
 const geoCodeApiKey = "664243d6da3b5785032551omxdb1a57";
 
-// let species = "dog"; // we'll need to make this dynamic later - eric
-
 // This activates the Submit button on the modal's form
 responseForm.addEventListener('submit', handleFormSubmit);
 
@@ -40,7 +38,6 @@ function handleFormSubmit(event) {
         alert('Enter your Location');
         return;
     } 
-
     getAdoptPetData(petInfo);
 }
 
@@ -48,7 +45,6 @@ function handleFormSubmit(event) {
 function getAdoptPetData(petInfo) {
     console.log(petInfo);
     const petUrl = "https://api-staging.adoptapet.com/search/pet_search?key="+petApiKey+"&v=3&output=json&city_or_zip="+petInfo.location+"&geo_range="+petInfo.distance+"&species="+petInfo.species+"&sex="+petInfo.gender+"&age="+petInfo.age+"&start_number=1&end_number=50";
-    // removed breed ID param so cats work:  &breed_id=real%3D801
 
     let petArray = [];
     fetch(petUrl)
@@ -58,32 +54,40 @@ function getAdoptPetData(petInfo) {
         }
         else {
             response.json().then(function (data) {
-
+                console.log(data);
                 for (let i = 0; i < data.pets.length; i++) {
-                    const petData = {
-                        name: data.pets[i].pet_name,
-                        age: data.pets[i].age,
-                        sex: data.pets[i].sex,
-                        breed: data.pets[i].primary_breed,
-                        pic: data.pets[i].large_results_photo_url,
-                        details: data.pets[i].details_url,
+                    fetch(data.pets[i].details_url)
+                    .then(function (response) {
+                        if (!response.ok) {
+                            alert(`Error:${response.statusText}`);
+                        }
+                    else {
+                        response.json().then(function (data2) {
+                            console.log(data2);
+                            const petData = {
+                                name: data.pets[i].pet_name,
+                                age: data.pets[i].age,
+                                sex: data.pets[i].sex,
+                                breed: data.pets[i].primary_breed,
+                                pic: data.pets[i].large_results_photo_url,
+                                details: data2.pet.description ?? "no description",
+                            }
+                            petArray.push(petData);
+                            localStorage.setItem('petArray', JSON.stringify(petArray));  
+                        })
                     }
-                    petArray.push(petData);
-                    localStorage.setItem('petArray', JSON.stringify(petArray));
+                    })
                 }
                 geoCodeZip(petInfo);
             })
-        }
-       
+        }   
     })
     .catch(function (error) {
         alert('Unable to connect to Adopt a Pet API');
     });
-    
  };
 
  function geoCodeZip(petInfo) {
-    //console.log(petInfo);
     const geoUrl = "https://geocode.maps.co/search?q="+petInfo.location+"&api_key=664243d6da3b5785032551omxdb1a57&limit=1";
     
     fetch(geoUrl)
