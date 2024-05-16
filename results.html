@@ -5,29 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-    
+
     <title>Pets Found</title>
 </head>
 
-<body>
+<body style="background-color: #a9daf8;">
     <header>
-    
-    <div class="navbar bg-base-300 rounded-box">
+    <div class="navbar bg-base-300 justify-center">
         <div class="flex-1 px-2 lg:flex-none">
-          <a class="text-lg font-bold">One Step Closer to Finding Your Forever Friend</a>
-   
-          <button id="back-button">🔙</button>
+          <h2 class="text-lg font-bold">One Step Closer to Finding Your Forever Friend</h2>
+          <button id="back-button" class="ml-5">🔙</button>
         </div>
       </div>
     </header>
 
     <main>
-    <div class="grid grid-cols-6 gap-4" id="results"></div>
-    <div id="mapdiv"></div>
+    <div style="height:35vh" id="mapdiv"></div>
+    <div class="grid grid-cols-6 gap-4 pt-5" id="results"></div>
     </main>
 
-    <script src="./assets/js/script.js"></script>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
     <script src="./assets/js/results.js"></script>
     <script src="./assets/js/map.js"></script>
 </body>

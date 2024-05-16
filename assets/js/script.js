@@ -45,6 +45,7 @@ function handleFormSubmit(event) {
 function getAdoptPetData(petInfo) {
     console.log(petInfo);
     const petUrl = "https://api-staging.adoptapet.com/search/pet_search?key="+petApiKey+"&v=3&output=json&city_or_zip="+petInfo.location+"&geo_range="+petInfo.distance+"&species="+petInfo.species+"&sex="+petInfo.gender+"&age="+petInfo.age+"&start_number=1&end_number=50";
+    console.log(petUrl);
 
     let petArray = [];
     fetch(petUrl)
@@ -74,12 +75,13 @@ function getAdoptPetData(petInfo) {
                                 email: data2.pet.email,
                             }
                             petArray.push(petData);
+                            localStorage.clear();
                             localStorage.setItem('petArray', JSON.stringify(petArray));  
+                            geoCodeZip(petInfo);
                         })
                     }
                     })
-                }
-                geoCodeZip(petInfo);
+                }  
             })
         }   
     })
@@ -113,7 +115,7 @@ function getAdoptPetData(petInfo) {
                 localStorage.setItem('geoArray', JSON.stringify(geoArray));
                 console.log(geoArray);
             })
+            location.href = "results.html";
         }
-        location.href = "results.html";
     })
  };
