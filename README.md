@@ -40,7 +40,6 @@ your project must fulfil the following requirements:
 
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-## Getting Started
 
 ## Screenshots
 
