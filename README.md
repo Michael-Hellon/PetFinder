@@ -1,4 +1,4 @@
-# PetFinder!
+# Pet Finder!
 This webapp will allow user to be able to find adoption centers nearby, animals held by centers, and directions to them!
 
 ## Description
@@ -68,9 +68,10 @@ MIT License
 Inspiration/Help/Credit
 
 APIs Used:
+* For pet adoption data:  https://partner-apis.adoptapet.com/
+* For geocoding:  https://geocode.maps.co/
+* For the map: https://wiki.openstreetmap.org/wiki/OpenLayers_Marker_Example
 
-For pet adoption data:  https://partner-apis.adoptapet.com/
-
-For geocoding:  https://geocode.maps.co/
-
-For the map: https://wiki.openstreetmap.org/wiki/OpenLayers_Marker_Example
+Libraries Used:
+* https://tailwindcss.com/
+* https://daisyui.com/
