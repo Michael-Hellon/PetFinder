@@ -43,18 +43,21 @@ your project must fulfil the following requirements:
 
 To see the project on the browser visit <https://michael-hellon.github.io/PetFinder/>.
 
-![screenshot](/assets/images/Empty-Modal.png) 
+![image](https://github.com/Michael-Hellon/PetFinder/assets/140920153/1a7991c3-20e7-4698-af9f-a21dc791c38a)
 
-![screenshot](/assets/images/Filled-modal.png) 
+![image](https://github.com/Michael-Hellon/PetFinder/assets/140920153/09809fc3-f2da-47fe-b38b-7d738bf3638b)
 
-![screenshot](/assets/images/results-screenshot.png) 
+![image](https://github.com/Michael-Hellon/PetFinder/assets/140920153/daa28bad-c362-4c2f-81b9-6c5d13383d5a)
+
+
+
 
 
 ## Authors
 
 Neilson, Gail  
 Delatorre, Juan  
-Kellog, Eric  
+Kellogg, Eric  
 Hellon, Michael  
 
 
