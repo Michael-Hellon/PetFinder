@@ -14,6 +14,7 @@ responseForm.addEventListener('submit', handleFormSubmit);
 
 function handleFormSubmit(event) {
     event
+    localStorage.clear();
     const petInfo = {
         species: speciesInput.value,
         age: ageInput.value,
@@ -75,7 +76,7 @@ function getAdoptPetData(petInfo) {
                                 email: data2.pet.email,
                             }
                             petArray.push(petData);
-                            localStorage.clear();
+                            //localStorage.clear();
                             localStorage.setItem('petArray', JSON.stringify(petArray));  
                             geoCodeZip(petInfo);
                         })
